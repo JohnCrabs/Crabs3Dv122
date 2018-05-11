@@ -1,0 +1,866 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>850</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Crabs3D v1.22</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/res/resource/Crabs3D/logo/crabs_3d.png</normaloff>:/res/resource/Crabs3D/logo/crabs_3d.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="spaceLabel">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="clockLabel">
+      <property name="font">
+       <font>
+        <family>Z003</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="GLWidget" name="GraphicWidget" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>640</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>CrossCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="tabletTracking">
+        <bool>false</bool>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::DefaultContextMenu</enum>
+       </property>
+      </widget>
+      <widget class="QWidget" name="ToolWidget" native="true">
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="VelovityLabel">
+            <property name="text">
+             <string>&lt;b&gt;Velocity&lt;b&gt;</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="Velocity">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>10</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksBelow</enum>
+            </property>
+            <property name="tickInterval">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QListWidget" name="clusterList">
+          <property name="sortingEnabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="X_label">
+            <property name="text">
+             <string>&lt;b&gt;X:&lt;/b&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="X_coord">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="Y_label">
+            <property name="text">
+             <string>&lt;b&gt;Y:&lt;/b&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Y_coord">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="Z_label">
+            <property name="text">
+             <string>&lt;b&gt;Z:&lt;/b&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Z_coord">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="frameLabel">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Frame:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="currentFrame">
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="maximum">
+             <number>1000000</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="pointsNumLbel">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Points: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="numberOfPoints">
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>850</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuImport">
+     <property name="title">
+      <string>Import</string>
+     </property>
+     <addaction name="actionC3D"/>
+    </widget>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export</string>
+     </property>
+     <widget class="QMenu" name="menuC3D">
+      <property name="title">
+       <string>C3D</string>
+      </property>
+      <widget class="QMenu" name="menuData">
+       <property name="title">
+        <string>Data</string>
+       </property>
+       <addaction name="actionPoint_csv"/>
+       <addaction name="actionAnalog_csv"/>
+      </widget>
+      <addaction name="actionHeader"/>
+      <addaction name="actionParameter"/>
+      <addaction name="menuData"/>
+     </widget>
+     <widget class="QMenu" name="menuCloud">
+      <property name="title">
+       <string>Cloud</string>
+      </property>
+      <addaction name="actionCloudSet_Parameters"/>
+      <addaction name="actionCloudCSV"/>
+      <addaction name="actionPrintClusters"/>
+     </widget>
+     <addaction name="menuC3D"/>
+     <addaction name="menuCloud"/>
+    </widget>
+    <addaction name="menuImport"/>
+    <addaction name="menuExport"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionUnits"/>
+    <addaction name="actionClusters"/>
+    <addaction name="actionPoint_List"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <widget class="QMenu" name="menuMove">
+     <property name="title">
+      <string>Move</string>
+     </property>
+     <addaction name="actionUp"/>
+     <addaction name="actionDown"/>
+     <addaction name="actionLeft"/>
+     <addaction name="actionRight"/>
+     <addaction name="actionFront"/>
+     <addaction name="actionBack"/>
+    </widget>
+    <widget class="QMenu" name="menuRotate">
+     <property name="title">
+      <string>Rotate Scene</string>
+     </property>
+     <addaction name="actionXp"/>
+     <addaction name="actionXm"/>
+     <addaction name="actionYp"/>
+     <addaction name="actionYm"/>
+     <addaction name="actionZp"/>
+     <addaction name="actionZm"/>
+    </widget>
+    <widget class="QMenu" name="menuZoom">
+     <property name="title">
+      <string>Zoom</string>
+     </property>
+     <addaction name="actionZoom_In"/>
+     <addaction name="actionZoom_Out"/>
+    </widget>
+    <widget class="QMenu" name="menuGrid">
+     <property name="title">
+      <string>Grid</string>
+     </property>
+     <addaction name="actionXY"/>
+     <addaction name="actionXZ"/>
+     <addaction name="actionYZ"/>
+    </widget>
+    <widget class="QMenu" name="menuSet_View">
+     <property name="title">
+      <string>Set View</string>
+     </property>
+     <addaction name="actionPilot_View"/>
+     <addaction name="actionPolar_View"/>
+    </widget>
+    <addaction name="menuMove"/>
+    <addaction name="menuRotate"/>
+    <addaction name="menuZoom"/>
+    <addaction name="menuSet_View"/>
+    <addaction name="actionResetView"/>
+    <addaction name="separator"/>
+    <addaction name="actionPlay_Pause"/>
+    <addaction name="separator"/>
+    <addaction name="menuGrid"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <widget class="QMenu" name="menuError_Remover">
+     <property name="title">
+      <string>Noise Remover</string>
+     </property>
+     <addaction name="actionAccumulated_Error_Remover"/>
+     <addaction name="actionMin_Nearest_Neighbour_Remover"/>
+     <addaction name="separator"/>
+     <addaction name="actionResetPointCloud"/>
+     <addaction name="separator"/>
+     <addaction name="actionFix_Cloud_Irreversible"/>
+     <addaction name="actionFix_Cloud_Weighted_Linear_Irreversible"/>
+    </widget>
+    <widget class="QMenu" name="menuClassification">
+     <property name="title">
+      <string>Classification</string>
+     </property>
+     <widget class="QMenu" name="menuK_Means">
+      <property name="title">
+       <string>K_Means</string>
+      </property>
+      <addaction name="actionKMeansSet_Parameters"/>
+      <addaction name="actionKMeansRun"/>
+     </widget>
+     <addaction name="menuK_Means"/>
+    </widget>
+    <addaction name="menuError_Remover"/>
+    <addaction name="menuClassification"/>
+    <addaction name="separator"/>
+    <addaction name="actionCrabs_Editor"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout_Crabs3D"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="windowTitle">
+    <string>Command Toolbar</string>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionExit"/>
+   <addaction name="actionC3D"/>
+   <addaction name="separator"/>
+   <addaction name="actionLeft"/>
+   <addaction name="actionUp"/>
+   <addaction name="actionDown"/>
+   <addaction name="actionRight"/>
+   <addaction name="separator"/>
+   <addaction name="actionZoom_Out"/>
+   <addaction name="actionZoom_In"/>
+   <addaction name="separator"/>
+   <addaction name="actionXp"/>
+   <addaction name="actionXm"/>
+   <addaction name="actionYp"/>
+   <addaction name="actionYm"/>
+   <addaction name="actionZp"/>
+   <addaction name="actionZm"/>
+   <addaction name="separator"/>
+   <addaction name="actionPlay_Pause"/>
+   <addaction name="separator"/>
+   <addaction name="actionXY"/>
+   <addaction name="actionXZ"/>
+   <addaction name="actionYZ"/>
+   <addaction name="separator"/>
+   <addaction name="actionPilot_View"/>
+   <addaction name="actionPolar_View"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/toolbar/exit.jpg</normaloff>:/res/resource/Crabs3D/toolbar/exit.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionUnits">
+   <property name="text">
+    <string>Units</string>
+   </property>
+  </action>
+  <action name="actionClusters">
+   <property name="text">
+    <string>Clusters</string>
+   </property>
+  </action>
+  <action name="actionUp">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/up.png</normaloff>:/res/resource/Crabs3D/view/up.png</iconset>
+   </property>
+   <property name="text">
+    <string>Up</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Up</string>
+   </property>
+  </action>
+  <action name="actionDown">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/down.png</normaloff>:/res/resource/Crabs3D/view/down.png</iconset>
+   </property>
+   <property name="text">
+    <string>Down</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Down</string>
+   </property>
+  </action>
+  <action name="actionLeft">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/left.png</normaloff>:/res/resource/Crabs3D/view/left.png</iconset>
+   </property>
+   <property name="text">
+    <string>Left</string>
+   </property>
+   <property name="shortcut">
+    <string>Left</string>
+   </property>
+  </action>
+  <action name="actionRight">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/right.png</normaloff>:/res/resource/Crabs3D/view/right.png</iconset>
+   </property>
+   <property name="text">
+    <string>Right</string>
+   </property>
+   <property name="shortcut">
+    <string>Right</string>
+   </property>
+  </action>
+  <action name="actionFront">
+   <property name="text">
+    <string>Front</string>
+   </property>
+   <property name="shortcut">
+    <string>Up</string>
+   </property>
+  </action>
+  <action name="actionBack">
+   <property name="text">
+    <string>Back</string>
+   </property>
+   <property name="shortcut">
+    <string>Down</string>
+   </property>
+  </action>
+  <action name="actionXp">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/rotXp.png</normaloff>:/res/resource/Crabs3D/view/rotXp.png</iconset>
+   </property>
+   <property name="text">
+    <string>X+</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actionXm">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/rotXm.png</normaloff>:/res/resource/Crabs3D/view/rotXm.png</iconset>
+   </property>
+   <property name="text">
+    <string>X-</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+8</string>
+   </property>
+  </action>
+  <action name="actionYp">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/rotYp.png</normaloff>:/res/resource/Crabs3D/view/rotYp.png</iconset>
+   </property>
+   <property name="text">
+    <string>Y+</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+4</string>
+   </property>
+  </action>
+  <action name="actionYm">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/rotYm.png</normaloff>:/res/resource/Crabs3D/view/rotYm.png</iconset>
+   </property>
+   <property name="text">
+    <string>Y-</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+6</string>
+   </property>
+  </action>
+  <action name="actionZp">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/rotZp.png</normaloff>:/res/resource/Crabs3D/view/rotZp.png</iconset>
+   </property>
+   <property name="text">
+    <string>Z+</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+9</string>
+   </property>
+  </action>
+  <action name="actionZm">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/rotZm.png</normaloff>:/res/resource/Crabs3D/view/rotZm.png</iconset>
+   </property>
+   <property name="text">
+    <string>Z-</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="actionZoom_In">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/zoom_in.png</normaloff>:/res/resource/Crabs3D/view/zoom_in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+  </action>
+  <action name="actionZoom_Out">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/zoom_out.png</normaloff>:/res/resource/Crabs3D/view/zoom_out.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+  </action>
+  <action name="actionAbout_Crabs3D">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/logo/crabs_3d.png</normaloff>:/res/resource/Crabs3D/logo/crabs_3d.png</iconset>
+   </property>
+   <property name="text">
+    <string>About Crabs3D</string>
+   </property>
+  </action>
+  <action name="actionPlay_Pause">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/play_pause.png</normaloff>:/res/resource/Crabs3D/view/play_pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>Play/Pause</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionXY">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/grid_yellow.png</normaloff>:/res/resource/Crabs3D/view/grid_yellow.png</iconset>
+   </property>
+   <property name="text">
+    <string>XY</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="actionXZ">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/grid_mageda.png</normaloff>:/res/resource/Crabs3D/view/grid_mageda.png</iconset>
+   </property>
+   <property name="text">
+    <string>XZ</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionYZ">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/grid_cyan.png</normaloff>:/res/resource/Crabs3D/view/grid_cyan.png</iconset>
+   </property>
+   <property name="text">
+    <string>YZ</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="actionResetView">
+   <property name="text">
+    <string>Reset View</string>
+   </property>
+   <property name="shortcut">
+    <string>F12</string>
+   </property>
+  </action>
+  <action name="actionPilot_View">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/autopilot.png</normaloff>:/res/resource/Crabs3D/view/autopilot.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pilot View</string>
+   </property>
+   <property name="shortcut">
+    <string>F10</string>
+   </property>
+  </action>
+  <action name="actionPolar_View">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/view/polarview.png</normaloff>:/res/resource/Crabs3D/view/polarview.png</iconset>
+   </property>
+   <property name="text">
+    <string>Polar View</string>
+   </property>
+   <property name="shortcut">
+    <string>F11</string>
+   </property>
+  </action>
+  <action name="actionC3D">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/format/c3d_format.png</normaloff>:/res/resource/Crabs3D/format/c3d_format.png</iconset>
+   </property>
+   <property name="text">
+    <string>C3D</string>
+   </property>
+  </action>
+  <action name="actionHeader">
+   <property name="text">
+    <string>Header</string>
+   </property>
+  </action>
+  <action name="actionParameter">
+   <property name="text">
+    <string>Parameter</string>
+   </property>
+  </action>
+  <action name="actionPoint_csv">
+   <property name="text">
+    <string>Point (csv)</string>
+   </property>
+  </action>
+  <action name="actionAnalog_csv">
+   <property name="text">
+    <string>Analog (csv)</string>
+   </property>
+  </action>
+  <action name="actionAccumulated_Error_Remover">
+   <property name="text">
+    <string>Accumulated Noise Remover</string>
+   </property>
+  </action>
+  <action name="actionMin_Nearest_Neighbour_Remover">
+   <property name="text">
+    <string>Nearest Neighbor Remover</string>
+   </property>
+  </action>
+  <action name="actionResetPointCloud">
+   <property name="text">
+    <string>Reset Point Cloud</string>
+   </property>
+  </action>
+  <action name="actionCloudCSV">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>CSV</string>
+   </property>
+  </action>
+  <action name="actionCloudSet_Parameters">
+   <property name="text">
+    <string>Set Parameters</string>
+   </property>
+  </action>
+  <action name="actionFix_Cloud_Irreversible">
+   <property name="text">
+    <string>Fix Cloud - Linear (Irreversible)</string>
+   </property>
+  </action>
+  <action name="actionKMeansSet_Parameters">
+   <property name="text">
+    <string>Set Parameters</string>
+   </property>
+  </action>
+  <action name="actionKMeansRun">
+   <property name="text">
+    <string>Run</string>
+   </property>
+  </action>
+  <action name="actionFix_Cloud_Weighted_Linear_Irreversible">
+   <property name="text">
+    <string>Fix Cloud - Weighted Linear (Irreversible)</string>
+   </property>
+  </action>
+  <action name="actionCrabs_Editor">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/res/resource/Crabs3D/logo/crabs_editor.png</normaloff>:/res/resource/Crabs3D/logo/crabs_editor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Crabs Editor</string>
+   </property>
+  </action>
+  <action name="actionPrintClusters">
+   <property name="text">
+    <string>Clusters</string>
+   </property>
+  </action>
+  <action name="actionPoint_List">
+   <property name="text">
+    <string>Point List</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GLWidget</class>
+   <extends>QWidget</extends>
+   <header>glwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>Velocity</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

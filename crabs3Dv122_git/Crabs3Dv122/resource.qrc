@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>resource/Crabs3D/format/c3d_format.png</file>
+        <file>resource/Crabs3D/format/csv_format.png</file>
+        <file>resource/Crabs3D/format/txt_format.png</file>
+        <file>resource/Crabs3D/logo/crabs_3d.png</file>
+        <file>resource/Crabs3D/logo/crabs_editor.png</file>
+        <file>resource/Crabs3D/logo/qtcreator.png</file>
+        <file>resource/Crabs3D/toolbar/exit.jpg</file>
+        <file>resource/Crabs3D/toolbar/open_image.jpeg</file>
+        <file>resource/Crabs3D/toolbar/question_mark.png</file>
+        <file>resource/Crabs3D/view/down.png</file>
+        <file>resource/Crabs3D/view/grid_cyan.png</file>
+        <file>resource/Crabs3D/view/grid_mageda.png</file>
+        <file>resource/Crabs3D/view/grid_yellow.png</file>
+        <file>resource/Crabs3D/view/left.png</file>
+        <file>resource/Crabs3D/view/play_pause.png</file>
+        <file>resource/Crabs3D/view/right.png</file>
+        <file>resource/Crabs3D/view/up.png</file>
+        <file>resource/Crabs3D/view/zoom_in.png</file>
+        <file>resource/Crabs3D/view/zoom_out.png</file>
+        <file>resource/Crabs3D/view/autopilot.png</file>
+        <file>resource/Crabs3D/view/polarview.png</file>
+        <file>resource/Crabs3D/view/rotXm.png</file>
+        <file>resource/Crabs3D/view/rotXp.png</file>
+        <file>resource/Crabs3D/view/rotYm.png</file>
+        <file>resource/Crabs3D/view/rotYp.png</file>
+        <file>resource/Crabs3D/view/rotZm.png</file>
+        <file>resource/Crabs3D/view/rotZp.png</file>
+        <file>resource/CrabsEditor/Bold.png</file>
+        <file>resource/CrabsEditor/Cut.png</file>
+        <file>resource/CrabsEditor/Italic.png</file>
+        <file>resource/CrabsEditor/Save.png</file>
+        <file>resource/CrabsEditor/Save_as.png</file>
+        <file>resource/CrabsEditor/img/Copy.png</file>
+        <file>resource/CrabsEditor/img/Cut_1.png</file>
+        <file>resource/CrabsEditor/img/New.png</file>
+        <file>resource/CrabsEditor/img/Open.png</file>
+        <file>resource/CrabsEditor/img/Paste.png</file>
+        <file>resource/CrabsEditor/img/Redo.png</file>
+        <file>resource/CrabsEditor/img/Save_1.png</file>
+        <file>resource/CrabsEditor/img/Save_as_1.png</file>
+        <file>resource/CrabsEditor/img/Undo.png</file>
+    </qresource>
+</RCC>
